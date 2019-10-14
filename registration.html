@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
 session_start();
 
 //output buffering for cookies so it sends out headers before any code
@@ -11,63 +11,49 @@ if($_SERVER["HTTPS"] != "on")
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
     exit();
 }
-?>
+?> -->
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+<html>
 
-    <?php
-    //declaring variables
-    $message = "";
-$verifiedMessage = "";
-// Database Connection 
-$conn = mysqli_connect("mysql.cms.gre.ac.uk","ai6935u","Mertmert2019","mdb_ai6935u");
-if (mysqli_connect_errno($conn)) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
-} ?>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <title>Register</title>
+</head>
 
-    <head>
-        <!--        mobile view-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="style.css"/>
-        <title>Register</title>
-    </head>
-    <body>
-        <!--navigation bar in lists-->
-        <ul>
-            <li><a href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/home.php">What is Carpool?</a></li>
-            <li><a href="#news">Contact</a></li>
-            <li style="float:right" ><a  href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/login.php">Login</a></li>
-            <li style="float:right" ><a  href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/search.php">Search</a></li>
-        </ul>
+<body>
+    <ul>
+        <li><a href="home.html">What is Carpool?</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li style="float:right"><a href="login.html">Login</a></li>
+        <li style="float:right"><a href="search.html">Search</a></li>
+    </ul>
 
-        <p class="boxHeader">Register</p>
+    <p class="boxHeader">Register</p>
 
-        <div>
-            <!-- registration box -->
-            <div class="box">
-                <form name="phpForm" action="registration.php" method="post">
+    <div>
+        <!-- registration box -->
+        <div class="box">
+            <form name="phpForm" action="registration.php" method="post">
 
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="userName" placeholder="Username" required>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="userName" placeholder="Username" required>
 
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="passWord" placeholder="Minumum of six characters" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="passWord" placeholder="Minumum of six characters" required>
 
-                    <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="eMail" placeholder="e.g. jones@hotmail.com" required>
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="eMail" placeholder="e.g. jones@hotmail.com" required>
 
-                    <img src="captcha.php" alt="Captcha">
-                    <br>
-                    Type the word above.
-                    <input type="text" id="captcha" name="captcha" required> 
+                <img src="captcha.php" alt="Captcha">
+                <br>
+                Type the word above.
+                <input type="text" id="captcha" name="captcha" required>
 
-                    <input type="submit" name="registerButton" value="Register">
+                <input type="submit" name="registerButton" value="Register">
 
-                    <?php
+                <!-- <?php
                     //if register button is succesfully clicked then send data from textboxes into these variables
                     if (isset($_POST['registerButton']))
                     {   
@@ -157,14 +143,13 @@ if (mysqli_connect_errno($conn)) {
                     mysqli_close($conn);
 
                     ?>
-                    <!-- output a message which is assigned for duplicate username -->
-                    <?php  echo $message;?>
-                    <?php echo $verifiedMessage; ?>
+                 output a message which is assigned for duplicate username -->
+                <!-- <?php  echo $message;?>
+                <?php echo $verifiedMessage; ?> -->
+            </form>
 
-                </form>
-
-            </div>
         </div>
-    </body>
+    </div>
+</body>
 
 </html>
