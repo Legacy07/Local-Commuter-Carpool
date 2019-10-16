@@ -1,76 +1,45 @@
-<?php 
+<html>
 
-// session starts
-//session_start();
-//output buffering for cookies so it sends out headers before any code
-ob_start();
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-// using this reference to open the page in secure https - https://stackoverflow.com/questions/85816/how-can-i-force-users-to-access-my-page-over-https-instead-of-http
-//https for secure connection when logging in
-if($_SERVER["HTTPS"] != "on")
-{
-    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
-    exit();
-}
-?>  
+  <link rel="stylesheet" href="style.css" />
+  <title>Login</title>
+</head>
 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<body>
+  <ul>
+    <li><a href="home.php">What is Carpool?</a></li>
+    <li><a href="#news">Contact</a></li>
+    <li style="float:right"><a href="registration.php">Register</a></li>
+    <li style="float:right"><a href="login.php">Login</a></li>
+    <li style="float:right"><a href="search.php">Search</a></li>
+  </ul>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+  <p class="boxHeader">Login</p>
 
-    <?php
-    //declaring variables
-    $message = "";
-// Database Connection 
-$conn = mysqli_connect("mysql.cms.gre.ac.uk","ai6935u","Mertmert2019","mdb_ai6935u");
-if (mysqli_connect_errno($conn)) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
-} ?>
+  <div>
+    <!-- login box -->
+    <div class="box">
+      <form name="loginForm">
+        <label for="userName">Username</label>
+        <input type="text" name="userName" placeholder="Username" [(ngModel)]="username"
+          required>
 
-    <head>
-        <!--        mobile view-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="style.css"/>
-        <title>Login</title>
-    </head>
-    <body>
+        <label for="passWord">Password</label>
+        <input type="password" name="password" placeholder="Minumum of six characters" [(ngModel)]="password" required>
 
-        <!--navigation bar in lists-->
-        <ul>
-            <li><a href="home.php">What is Carpool?</a></li>
-            <li><a href="#news">Contact</a></li>
-            <li style="float:right" ><a  href="registration.php">Register</a></li>
-            <li style="float:right" ><a  href="login.php">Login</a></li>
-            <li style="float:right" ><a  href="search.php">Search</a></li>
-        </ul>
+        <input type="submit" name="loginButton" value="Login" (click)="Login()">
+      </form>
 
-        <p class="boxHeader">Login</p>
+    </div>
+    <!-- registration link -->
+    <div class="smallBox">
+      <p>Don't have an account?
+        <a href="registration.html">Register now</a></p>
 
-        <div>
-            <!-- login box -->
-            <div class="box">
-                <form name="searchForm" action="login.php" method="post">
-
-                    <label for="userName">Username</label>
-                    <input type="text" id="start" name="userName" placeholder="Username" value="<?php if (isset($_COOKIE['userName'])) {?><?php }?>" required>
-
-                    <label for="passWord">Password</label>
-                    <input type="password" id="password" name="passWord" placeholder="Minumum of six characters" required>
-
-                    <input type="submit" name="loginButton" value="Login">
-                </form>
-
-            </div>
-            <!-- registration link -->
-            <div class="smallBox">
-                <p>Don't have an account?
-                    <a  href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/registration.php">Register now</a></p> 
-
-            </div>
-            <?php
+    </div>
+    <!-- <?php
             //if register button is succesfully clicked then send data from textboxes into these variables
             if (isset($_POST['loginButton']))
             {   
@@ -134,12 +103,9 @@ if (mysqli_connect_errno($conn)) {
             //close connection
             mysqli_close($conn);
 
-            ?>
+            ?> -->
 
-        </div>
-        <div class="redAlert" ><span class="closeButton" onclick="this.parentElement.style.display='none';">&times;</span> <p><?php echo $message; ?> </p> 
-        </div>
-        <div class="infoAlert" ><span class="closeButton" onclick="this.parentElement.style.display='none';">&times;</span> <p><?php echo "This site uses cookies to store information on your browser"; ?> </p> 
-        </div>
-    </body>
+  </div>
+</body>
+
 </html>
