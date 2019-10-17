@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { UsersRepository } from '../repositories/login.repository';
+import { UsersRepository } from '../repositories/users.repository';
+
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './login.component.html'
 })
 
 export class LoginComponent implements OnInit {
