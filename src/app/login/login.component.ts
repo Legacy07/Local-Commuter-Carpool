@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { UsersRepository } from '../repositories/users.repository';
-
+import { UserDetails } from '../Models/UserDetails';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   }
 
   public Login(): void {
-    this.usersRepository.getUser(this.username, this.password);
+    this.usersRepository.getUser(this.username, this.password);  
+    // this.usersRepository.GetValues();
   }
 
 }

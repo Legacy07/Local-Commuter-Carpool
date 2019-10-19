@@ -1,52 +1,39 @@
-<!-- <?php 
-session_start();
-
-//output buffering for cookies so it sends out headers before any code
-ob_start();
-
-// using this reference to open the page in secure https - https://stackoverflow.com/questions/85816/how-can-i-force-users-to-access-my-page-over-https-instead-of-http
-//https for secure connection when logging in
-if($_SERVER["HTTPS"] != "on")
-{
-    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
-    exit();
-}
-?> -->
-<?xml version="1.0" encoding="UTF-8"?>
-
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="style.css" /> -->
-    <title>Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <title>Register</title>
 </head>
 
 <body>
-    <p class="boxHeader">Register</p>
+  <p class="boxHeader">Register</p>
 
-    <div>
-        <!-- registration box -->
-        <div class="box">
-            <form name="register" action="registration.php" method="post">
+  <div>
+    <!-- registration box -->
+    <div class="box">
+      <form name="registerForm">
 
-                <label for="username">Username</label>
-                <input type="text" id="username" name="userName" placeholder="Username" required>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Username" [(ngModel)]="user.Username" required>
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="passWord" placeholder="Minumum of six characters" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Minumum of six characters"
+          [(ngModel)]="user.Password" required>
 
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="eMail" placeholder="e.g. jones@hotmail.com" required>
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="e.g. jones@hotmail.com" [(ngModel)]="user.Email"
+          required>
 
-                <img src="captcha.php" alt="Captcha">
+        <!-- <img src="captcha.php" alt="Captcha">
                 <br>
                 Type the word above.
-                <input type="text" id="captcha" name="captcha" required>
+                <input type="text" id="captcha" name="captcha" required> -->
 
-                <input type="submit" name="registerButton" value="Register">
-
-                <!-- <?php
+        <input type="submit" name="registerButton" (click)="SaveUser()" value="Register">
+      </form>
+    </div>
+    <!-- <?php
                     //if register button is succesfully clicked then send data from textboxes into these variables
                     if (isset($_POST['registerButton']))
                     {   
@@ -137,12 +124,9 @@ if($_SERVER["HTTPS"] != "on")
 
                     ?>
                  output a message which is assigned for duplicate username -->
-                <!-- <?php  echo $message;?>
+    <!-- <?php  echo $message;?>
                 <?php echo $verifiedMessage; ?> -->
-            </form>
-
-        </div>
-    </div>
+  </div>
 </body>
 
 </html>
