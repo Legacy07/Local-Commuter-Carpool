@@ -1,9 +1,13 @@
 <ul>
-    <li><a [routerLink]="['/home']" routerLinkActive="router-link-active" >What is Carpool?</a></li>
-    <li><a href="#news">Contact</a></li>
-    <li style="float:right"><a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a></li>
-    <li style="float:right"><a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a></li>
-    <!-- <li style="float:right"><a [routerLink]="['/search']" routerLinkActive="router-link-active">Search</a></li> -->
-  </ul>
-<!-- look at the routing with home/login, home/register etcc... - https://stackoverflow.com/questions/50935243/angular-routing-replacing-components -->
+  <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">What is Carpool?</a></li>
+  <li><a href="#news">Contact</a></li>
+  <li style="float:right"><a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a></li>
+  <li style="float:right"><a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a></li>
+  <li style="float:right"><a [routerLink]="['/search']" routerLinkActive="router-link-active">Search</a></li>
+
+  <!-- <li style="float:right"><a href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/logout.php">Logout</a></li>
+  <li style="float:right"><a href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/memberposts.php">My Posts</a></li>
+  <li style="float:right"><a href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/post.php">Post a Journey</a></li> -->
+
+</ul>
 <router-outlet></router-outlet>

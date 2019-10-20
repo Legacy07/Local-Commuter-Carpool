@@ -3,7 +3,7 @@ import { UserModel } from '../Models/UserModel';
 import { UsersRepository } from '../repositories/users.repository';
 
 @Component({
-  selector: 'app-register',
+  selector: 'register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
