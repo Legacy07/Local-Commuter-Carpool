@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-editpost',
-  templateUrl: './editpost.component.html',
-  styleUrls: ['./editpost.component.scss']
+  templateUrl: './editpost.component.html'
 })
 export class EditpostComponent implements OnInit {
 

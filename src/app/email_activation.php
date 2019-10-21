@@ -6,7 +6,7 @@
 
     <head>
         <!-- using the custom css -->    
-        <link rel="stylesheet" href="style.css"/>
+        <!-- <link rel="stylesheet" href="style.css"/> -->
         <title>Email Activation</title>
     </head>
     <body>

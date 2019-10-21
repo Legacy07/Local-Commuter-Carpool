@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-postjourney',
-  templateUrl: './postjourney.component.html',
-  styleUrls: ['./postjourney.component.scss']
+  templateUrl: './postjourney.component.html'
 })
 export class PostjourneyComponent implements OnInit {
 
@@ -13,6 +12,6 @@ export class PostjourneyComponent implements OnInit {
   }
 
   public SavePost(): void{
-    
+
   }
 }

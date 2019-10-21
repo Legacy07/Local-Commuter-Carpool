@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { MemberpostsComponent } from './memberposts/memberposts.component';
 import { EditpostComponent } from './editpost/editpost.component';
+import { PostjourneyComponent } from './postjourney/postjourney.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   {
     path: 'myposts', component: MemberpostsComponent, children: [
-      { path: '/myposts/editpost', component: EditpostComponent }
+      { path: '/myposts/editpost', component: EditpostComponent },
+      { path: '/myposts/postjourney', component: PostjourneyComponent }
     ]
   }
 ];

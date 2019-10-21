@@ -36,7 +36,7 @@ if (empty($_COOKIE['userName'])){
         <!--        mobile view-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- using the custom css -->    
-        <link rel="stylesheet" href="style.css"/>
+        <!-- <link rel="stylesheet" href="style.css"/> -->
         <title>Post Journeys</title>
     </head>
     <body>

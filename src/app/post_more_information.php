@@ -41,7 +41,7 @@ $row = mysqli_fetch_assoc($sql);
     ?>
     <head>
         <!-- using the custom css -->    
-        <link rel="stylesheet" href="style.css"/>
+        <!-- <link rel="stylesheet" href="style.css"/> -->
         <title>My posts</title>
     </head>
     <body>
