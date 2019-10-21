@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My posts</title>
+</head>
+
+<body>
+
+  <p class="tableHeader" *ngIf="posts === null">No Data found. Post a Journey to view your posts.</p>
+  <!-- table contains the post data -->
+  <p class="tableHeader" *ngIf="posts !== null">You can edit or delete your posts</p>
+  <div class="center">
+    <table id="table">
+      <tr>
+        <th class="list" width="40">Post#</th>
+        <th class="list" width="50">Purpose</th>
+        <th class="list" width="150">Starting Point</th>
+        <th class="list" width="150">Destination</th>
+        <th class="list" width="100">Date</th>
+        <th class="list" width="100">Car</th>
+        <th class="list" width="150">Cost Sharing</th>
+        <th class="list" width="400">Details</th>
+        <th class="list" width="400">Image</th>
+        <th class="list" width="50">&nbsp</th>
+        <th class="list" width="40">&nbsp</th>
+        <th class="list" width="40">&nbsp</th>
+      </tr>
+      
+      <tr *ngFor="let post of posts">
+        <td>{{post.id}}</td>
+        <td>{{post.purpose}}</td>
+        <td>{{post.startingPoint}}</td>
+        <td>{{post.destination}}</td>
+        <td>{{post.date}}</td>
+        <td>{{post.car}}</td>
+        <td>{{post.costSharing}}</td>
+        <td>{{post.details}}</td>
+        <td><a [routerLink]="['/mypost/{{post.id}}']" routerLinkActive="router-link-active">Edit Post</a></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>

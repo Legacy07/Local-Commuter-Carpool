@@ -4,8 +4,7 @@ import { UsersRepository } from '../repositories/users.repository';
 
 @Component({
   selector: 'register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
 

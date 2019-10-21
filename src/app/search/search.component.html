@@ -31,9 +31,7 @@
   </div>
 
   <div class="center" *ngIf="isSearchedPosts">
-    <!-- Adapted to generate the table from - A Beginner's Guide PHP and MySQL Web Development, pg. 467 - 468  -->
     <table id="table">
-      <!-- Display the column headings -->
       <tr>
         <th class="list" width="40">Post#</th>
         <th class="list" width="50">Purpose</th>
@@ -44,17 +42,14 @@
       </tr>
 
       <!-- inserting the data in rows -->
-      <tr>
-        <!-- <td align="center"><?php echo $row ['ID']; ?></td>
-        <td align="center"><?php echo $row ['Purpose']; ?></td>
-        <td><?php echo $row ['Starting_Point']; ?></td>
-        <td><?php echo $row ['Destination']; ?></td>
-        <td align="center"><?php echo $row ['Date']; ?></td> -->
-        <!--                    if the user isnt logged in then redirect to login page -->
-        <!-- <td><a <?php if (isset($_COOKIE['userName'])) { ?>
-            href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/post_more_information.php?id=<?php echo $row ['ID']; ?>"
-            <?php } else{ ?>href="http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/login.php" <?php } ?>>More
-            Information>></a></td> -->
+      <tr *ngFor="let post of posts">
+        <td>{{post.id}}</td>
+        <td>{{post.purpose}}</td>
+        <td>{{post.startingPoint}}</td>
+        <td>{{post.destination}}</td>
+        <td>{{post.date}}</td>
+        <!-- More information shows the post with full info of the post if logged in, if not redirect to log in page. -->
+        <td>More Information>></td>
       </tr>
     </table>
 

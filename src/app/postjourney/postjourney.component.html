@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post Journeys</title>
+</head>
+
+<body>
+  <p class="postHeader">Schedule your journey</p>
+  <div>
+    <div class="postScheduleBox">
+      <form name="phpForm" action="post.php" method="post" enctype="multipart/form-data">
+
+        <!-- ng model radiogroup -->
+        <input type="radio" name="purpose" value="Obtain" checked> Obtain a lift
+        <input type="radio" name="purpose" value="Provide"> Provide a lift
+        <input type="radio" name="purpose" value="Both"> Both<br>
+
+        <label for="startingPoint">Starting Point*</label>
+        <input type="text" id="startingPoint" name="startingPoint" placeholder="e.g. North Greenwich" required [(ngModel)]="post.StartingPoint">
+
+        <label for="destination">Destination*</label>
+        <input type="text" id="destination" name="destination" placeholder="e.g. Cutty Sark" required [(ngModel)]="post.Destination">
+
+        <label for="date">Date*</label><br>
+        <input type="datetime-local" id="date" name="date" required [(ngModel)]="post.Date"><br>
+
+        <label for="car">Car type/model</label>
+        <input type="text" id="car" name="car" placeholder="e.g. Audi" [(ngModel)]="post.CarType">
+
+        <label for="cost">How much are you willing to chip in? (in percentages)</label>
+        <input type="text" id="cost" name="cost" placeholder="e.g. 30% " [(ngModel)]="post.Cost">
+
+        <label for="details">Extra Details:</label>
+        <textarea rows="4" cols="44" name="details" maxlength="200" placeholder="Max Length: 200 words" [(ngModel)]="post.ExtraDetails"></textarea><br>
+
+        <label for="imageFile">Select an image to upload:</label>
+        <input type="file" size="40" multiple="multiple" name="imageFile" id="imageFile" /><br><br>
+
+        <input type="submit" name="postButton" value="Post Journey" (click)="SavePost()">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

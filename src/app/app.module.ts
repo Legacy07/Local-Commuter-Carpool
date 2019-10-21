@@ -9,6 +9,9 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { MemberpostsComponent } from './memberposts/memberposts.component';
+import { EditpostComponent } from './editpost/editpost.component';
+import { PostjourneyComponent } from './postjourney/postjourney.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SearchComponent } from './search/search.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    MemberpostsComponent,
+    EditpostComponent,
+    PostjourneyComponent
   ],
   imports: [
     BrowserModule,

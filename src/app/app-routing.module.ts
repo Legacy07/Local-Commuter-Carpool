@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { MemberpostsComponent } from './memberposts/memberposts.component';
+import { EditpostComponent } from './editpost/editpost.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +19,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  {
+    path: 'myposts', component: MemberpostsComponent, children: [
+      { path: '/myposts/editpost', component: EditpostComponent }
+    ]
+  }
 ];
 
 @NgModule({
