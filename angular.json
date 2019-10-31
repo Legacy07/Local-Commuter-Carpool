@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/styles.scss",
-              "src/styles/home_style.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },

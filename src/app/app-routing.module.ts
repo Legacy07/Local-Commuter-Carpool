@@ -23,8 +23,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   {
     path: 'myposts', component: MemberpostsComponent, children: [
-      { path: '/myposts/editpost', component: EditpostComponent },
-      { path: '/myposts/postjourney', component: PostjourneyComponent }
+      { path: 'myposts/editpost', component: EditpostComponent },
+      { path: 'myposts/postjourney', component: PostjourneyComponent }
     ]
   }
 ];
