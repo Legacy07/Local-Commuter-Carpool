@@ -1,9 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
+import { Injectable } from '@angular/core';
 
 export interface IConfigService {
     HandleError(error: HttpErrorResponse);
 }
+
+@Injectable({ providedIn: 'root' })
 export class ConfigService implements IConfigService {
     public HandleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
@@ -20,4 +23,5 @@ export class ConfigService implements IConfigService {
         return throwError(
           'Something bad happened; please try again later.');
       };
+
 }

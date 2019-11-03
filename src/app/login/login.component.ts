@@ -22,8 +22,10 @@ export class LoginComponent implements OnInit {
   }
 
   public Login(): void {
-    this.usersRepository.getUser(this.username, this.password);  
-    // this.usersRepository.GetValues();
+    this.usersRepository.getUser(this.username, this.password)
+      .subscribe(user => {
+          
+      });
   }
 
 }

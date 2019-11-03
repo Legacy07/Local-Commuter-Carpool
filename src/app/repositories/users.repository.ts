@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { UserDetails } from '../Models/UserDetails';
 import { UserModel } from '../Models/UserModel';
 import { ConfigService } from '../config.service';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class UsersRepository {
@@ -16,20 +17,22 @@ export class UsersRepository {
     };
 
     constructor(
-        private http: HttpClient) { }
+        private http: HttpClient,
+        private configService: ConfigService) { }
 
-    getUser(username: string, password: string): void {
-        const url = `${this.usersControllerUrl}/${username}`;
-        this.http.get<UserDetails>(url).subscribe(() => {
-            console.log("asakjshjak");
-        });
+    getUser(username: string, password: string): Observable<string> {
+        const url = `${this.usersControllerUrl}/${username}/${password}`;
+        return this.http.get<string>(url)
+            .pipe(
+                catchError(this.configService.HandleError)
+            );
     }
 
     saveUser(user: UserModel): Observable<string> {
         const url = `${this.usersControllerUrl}`;
-        return this.http.post<UserModel>(url, user, this.httpOptions)
+        return this.http.post<string>(url, user, this.httpOptions)
             .pipe(
-               catchError(ConfigService.HandleError) 
+                catchError(this.configService.HandleError)
             );
     }
 

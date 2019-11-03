@@ -12,17 +12,16 @@ export class RegisterComponent implements OnInit {
   @Input() user: UserModel;
 
   constructor(private usersRepository: UsersRepository,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit() {
     this.user = UserModel.defaultInstance();
   }
 
   public SaveUser(): void {
-     var savedUser = this.usersRepository.saveUser(this.user);
-
-     if (savedUser ==! null){
-      this.router.navigate(['login']);
-     }
+    this.usersRepository.saveUser(this.user)
+      .subscribe(() => {
+        this.router.navigate(['/login']);
+      });
   }
 }
